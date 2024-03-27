@@ -13,7 +13,6 @@ export default function init() {
     lowBattery();
     notifications();
     hyprland();
-    swww();
   } catch (error) {
     logError(error);
   }

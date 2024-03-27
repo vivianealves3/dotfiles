@@ -7,34 +7,48 @@ import icons from "lib/icons";
 const options = mkOptions(OPTIONS, {
   autotheme: opt(false),
 
-  theme: {
-    dark: {
-      primary: {
-        bg: opt("#51a4e7"),
-        fg: opt("#141414"),
-      },
-      error: {
-        bg: opt("#e55f86"),
-        fg: opt("#141414"),
-      },
-      bg: opt("#171717"),
-      fg: opt("#eeeeee"),
-      widget: opt("#eeeeee"),
-      border: opt("#eeeeee"),
-    },
-    light: {
-      primary: {
-        bg: opt("#426ede"),
-        fg: opt("#eeeeee"),
-      },
-      error: {
-        bg: opt("#b13558"),
-        fg: opt("#eeeeee"),
-      },
-      bg: opt("#fffffa"),
-      fg: opt("#080808"),
-      widget: opt("#080808"),
-      border: opt("#080808"),
+    theme: {
+        dark: {
+            primary: {
+                bg: opt("#51a4e7"),
+                fg: opt("#141414"),
+            },
+            error: {
+                bg: opt("#e55f86"),
+                fg: opt("#141414"),
+            },
+            bg: opt("#171717"),
+            fg: opt("#eeeeee"),
+            widget: opt("#eeeeee"),
+            border: opt("#eeeeee"),
+        },
+        light: {
+            primary: {
+                bg: opt("#426ede"),
+                fg: opt("#eeeeee"),
+            },
+            error: {
+                bg: opt("#b13558"),
+                fg: opt("#eeeeee"),
+            },
+            bg: opt("#fffffa"),
+            fg: opt("#080808"),
+            widget: opt("#080808"),
+            border: opt("#080808"),
+        },
+
+        blur: opt(0),
+        scheme: opt<"dark" | "light">("dark"),
+        widget: { opacity: opt(94) },
+        border: {
+            width: opt(1),
+            opacity: opt(96),
+        },
+
+        shadows: opt(true),
+        padding: opt(7),
+        spacing: opt(12),
+        radius: opt(11),
     },
 
     blur: opt(0),
