@@ -39,11 +39,7 @@ in {
 
       monitor = [
         "DP-1, 1360x768, 0x0, 1"
-      ];
-      monitor = [
         "HDMI-A-1, 1920x1080, 1360x0, 1"
-      ];
-      monitor = [
         "DVI-D-1, 1600x900, 3280x0, 1"
       ];
 
