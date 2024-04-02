@@ -38,9 +38,13 @@ in {
       ];
 
       monitor = [
-        # "eDP-1, 1920x1080, 0x0, 1"
-        # "HDMI-A-1, 2560x1440, 1920x0, 1"
-        ",highrr,auto,1"
+        "DP-1, 1360x768, 0x0, 1"
+      ];
+      monitor = [
+        "HDMI-A-1, 1920x1080, 1360x0, 1"
+      ];
+      monitor = [
+        "DVI-D-1, 1600x900, 3280x0, 1"
       ];
 
       general = {
