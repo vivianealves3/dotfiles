@@ -25,13 +25,13 @@
 
     "del" = "gio trash";
 
-    "cfg" = "code /home/kaldr/Projects/dotfiles";
+    "cfg" = "code /home/viivs/dev/dotfiles";
 
     "nxcg" = "sudo nix-collect-garbage";
     "nxst" = "sudo nixos-rebuild switch --flake github:PedroDiniz/dotfiles --impure";
     "nxbt" = "sudo nixos-rebuild boot --flake github:PedroDiniz/dotfiles --impure";
     "pjts" = "cd /home/kaldr/Projects";
-    "forky" = "clear;neofetch";
+    "forky" = "clear; neofetch";
   };
 in {
   programs = {
