@@ -142,27 +142,27 @@ in {
           "SUPER, O, fakefullscreen"
           "SUPER, P, togglesplit"
 
-        "SUPER, space, hyprexpo:expo, toggle"
+          "SUPER, space, hyprexpo:expo, toggle"
 
-        (mvfocus "k" "u")
-        (mvfocus "j" "d")
-        (mvfocus "l" "r")
-        (mvfocus "h" "l")
-        (ws "left" "e-1")
-        (ws "right" "e+1")
-        (mvtows "left" "e-1")
-        (mvtows "right" "e+1")
-        (resizeactive "k" "0 -20")
-        (resizeactive "j" "0 20")
-        (resizeactive "l" "20 0")
-        (resizeactive "h" "-20 0")
-        (mvactive "k" "0 -20")
-        (mvactive "j" "0 20")
-        (mvactive "l" "20 0")
-        (mvactive "h" "-20 0")
-      ]
-      ++ (map (i: ws (toString i) (toString i)) arr)
-      ++ (map (i: mvtows (toString i) (toString i)) arr);
+          (mvfocus "k" "u")
+          (mvfocus "j" "d")
+          (mvfocus "l" "r")
+          (mvfocus "h" "l")
+          (ws "left" "e-1")
+          (ws "right" "e+1")
+          (mvtows "left" "e-1")
+          (mvtows "right" "e+1")
+          (resizeactive "k" "0 -20")
+          (resizeactive "j" "0 20")
+          (resizeactive "l" "20 0")
+          (resizeactive "h" "-20 0")
+          (mvactive "k" "0 -20")
+          (mvactive "j" "0 20")
+          (mvactive "l" "20 0")
+          (mvactive "h" "-20 0")
+        ]
+        ++ (map (i: ws (toString i) (toString i)) arr)
+        ++ (map (i: mvtows (toString i) (toString i)) arr);
 
       bindle = [
         ",XF86MonBrightnessUp,   exec, ${brightnessctl} set +5%"
