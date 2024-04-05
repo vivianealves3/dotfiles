@@ -30,6 +30,12 @@
     bitwarden-desktop
     fnm
 
+    # langs
+    poetry
+    nodejs
+    yarn
+    go
+
     # tools
     bat
     eza

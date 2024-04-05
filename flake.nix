@@ -129,7 +129,10 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
 
     matugen.url = "github:InioX/matugen";
     ags.url = "github:Aylur/ags";

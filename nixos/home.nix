@@ -57,7 +57,6 @@
     "file://${home}/Pictures"
     "file://${home}/Videos"
     "file://${home}/.config Config"
-    "file://${home}/.local/share Local"
   ];
 
   services = {
