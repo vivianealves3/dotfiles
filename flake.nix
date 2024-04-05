@@ -1,5 +1,5 @@
 {
-  description = "Configurations of Aylur";
+  description = "Configurations of Viivs";
 
   outputs = inputs@{ self, home-manager, nix-darwin, nixpkgs, ... }: {
     formatter = {

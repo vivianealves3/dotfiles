@@ -111,9 +111,8 @@ with lib.hm.gvariant; {
         "obsidian.desktop"
         "transmission-gtk.desktop"
         "caprine.desktop"
-        "teams-for-linux.desktop"
-        "discord.desktop"
-        "spotify.desktop"
+        "webcord.desktop"
+        "cider.desktop"
         "com.usebottles.bottles.desktop"
         "org.gnome.Software.desktop"
       ];

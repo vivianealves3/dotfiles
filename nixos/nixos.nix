@@ -41,6 +41,7 @@
 
   # dconf
   programs.dconf.enable = true;
+  programs.nix-ld.enable = true;
 
   # packages
   environment.systemPackages = with pkgs; [
@@ -48,7 +49,8 @@
     neovim
     git
     wget
-    fnm
+    rustdesk-flutter
+    webcord-vencord
   ];
 
   # services
@@ -58,7 +60,7 @@
       excludePackages = [pkgs.xterm];
     };
     printing.enable = true;
-    flatpak.enable = true;
+    # flatpak.enable = true;
   };
 
   # logind

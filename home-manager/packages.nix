@@ -18,23 +18,19 @@
     obsidian
     (mpv.override {scripts = [mpvScripts.mpris];})
     libreoffice
-    spotify
     caprine-bin
     d-spy
     github-desktop
     gimp
     transmission_4-gtk
-    discord
-    teams-for-linux
+    insomnia
     icon-library
     dconf-editor
-    gnome-secrets
     thunderbird
     bitwarden-desktop
-    protonup-qt
+    fnm
 
     # tools
-    # steam-run # fhs envs
     bat
     eza
     fd
@@ -46,20 +42,29 @@
     unzip
     glib
     mongodb-compass
-    bottles
     gh
+    google-chrome
+
+    # gaming
+    steam-run
+    # fhs envs
+    wine
+    winetricks
     r2modman
     mangohud
     goverlay
-    rustdesk
+    bottles
+    protonup-qt
+    chiaki
+    lutris
+    gamescope
+    gamemode
 
     # fun
     glow
     slides
     yabridge
     yabridgectl
-    wine-staging
-    lutris
     cider
   ];
 }

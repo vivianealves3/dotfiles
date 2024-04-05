@@ -40,7 +40,7 @@
     gnome-weather
     gnome-calculator
     gnome-clocks
-    gnome-software # for flatpak
+    # gnome-software # for flatpak
     wl-gammactl
     wl-clipboard
     wayshot

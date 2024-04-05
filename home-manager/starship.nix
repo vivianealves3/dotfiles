@@ -74,7 +74,6 @@
     #   "Pictures" = " ";
     #   "Videos" = " ";
     #   "Projects" = "󱌢 ";
-    #   "School" = "󰑴 ";
     #   "GitHub" = "";
     #   ".config" = " ";
     #   "Vault" = "󱉽 ";
@@ -116,10 +115,12 @@ in {
 
   programs.bash.initExtra = ''
     eval "$(${starshipCmd} init bash)"
+    neofetch
   '';
 
   programs.zsh.initExtra = ''
     eval "$(${starshipCmd} init zsh)"
+    eval "$(fnm env --use-on-cd)"
   '';
 
   programs.nushell = {

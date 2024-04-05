@@ -23,7 +23,6 @@
       "tmux"
     ];
     casks = [
-      "spotify"
       "zed"
       "wezterm"
       "docker"

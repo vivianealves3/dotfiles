@@ -117,11 +117,11 @@ const options = mkOptions(OPTIONS, {
       action: opt(() => App.toggleWindow("datemenu")),
     },
     systray: {
-      ignore: opt(["KDE Connect Indicator", "spotify-client"]),
+      ignore: opt(["KDE Connect Indicator", "Cider"]),
     },
     media: {
       monochrome: opt(true),
-      preferred: opt("spotify"),
+      preferred: opt("Cider"),
       direction: opt<"left" | "right">("right"),
       format: opt("{artists} - {title}"),
       length: opt(40),
@@ -149,10 +149,10 @@ const options = mkOptions(OPTIONS, {
         [
           "firefox",
           "org.gnome.Nautilus",
-          "org.gnome.Calendar",
+          "code",
           "obsidian",
-          "discord",
-          "spotify",
+          "webcord",
+          "cider",
         ],
       ]),
     },
@@ -209,7 +209,7 @@ const options = mkOptions(OPTIONS, {
 
   notifications: {
     position: opt<Array<"top" | "bottom" | "left" | "right">>(["top", "right"]),
-    blacklist: opt(["Spotify"]),
+    blacklist: opt(["Cider"]),
     width: opt(440),
   },
 

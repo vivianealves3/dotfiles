@@ -97,7 +97,7 @@ in {
         (f "xdg-desktop-portal-gnome")
         (f "transmission-gtk")
         (f "com.github.Aylur.ags")
-        "workspace 7, title:Spotify"
+        "workspace 7, title:Cider"
       ];
 
       bind = let

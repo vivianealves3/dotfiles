@@ -24,9 +24,14 @@
     "gr" = "git reset --soft HEAD~1";
 
     "del" = "gio trash";
-  };
-  fnmConfig = {
-    eval = "${pkgs.fnm}/bin/fnm env --use-on-cd";
+
+    "cfg" = "code /home/kaldr/Projects/dotfiles";
+
+    "nxcg" = "sudo nix-collect-garbage";
+    "nxst" = "sudo nixos-rebuild switch --flake github:PedroDiniz/dotfiles --impure";
+    "nxbt" = "sudo nixos-rebuild boot --flake github:PedroDiniz/dotfiles --impure";
+    "pjts" = "cd /home/kaldr/Projects";
+    "forky" = "clear;neofetch";
   };
 in {
   programs = {
@@ -42,14 +47,15 @@ in {
         bindkey "^[[1;5C" forward-word
         bindkey "^[[1;5D" backward-word
         unsetopt BEEP
-        ${fnmConfig.eval}
       '';
     };
 
     bash = {
       inherit shellAliases;
       enable = true;
-      initExtra = "SHELL=${pkgs.bash}";
+      initExtra = ''
+        SHELL=${pkgs.bash}/bin/bash
+      '';
     };
 
     nushell = {
