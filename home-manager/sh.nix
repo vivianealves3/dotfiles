@@ -28,9 +28,9 @@
     "cfg" = "code /home/viivs/dev/dotfiles";
 
     "nxcg" = "sudo nix-collect-garbage";
-    "nxst" = "sudo nixos-rebuild switch --flake github:PedroDiniz/dotfiles --impure";
-    "nxbt" = "sudo nixos-rebuild boot --flake github:PedroDiniz/dotfiles --impure";
-    "pjts" = "cd /home/kaldr/Projects";
+    "nxst" = "sudo nixos-rebuild switch --flake github:vivianealves3/dotfiles --impure";
+    "nxbt" = "sudo nixos-rebuild boot --flake github:vivianealves3/dotfiles --impure";
+    "pjts" = "cd /home/viivs/dev";
     "forky" = "clear; neofetch";
   };
 in {
