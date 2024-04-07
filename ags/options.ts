@@ -87,6 +87,81 @@ const options = mkOptions(OPTIONS, {
         "powermenu",
       ]),
     },
+
+    bar: {
+      flatButtons: opt(true),
+      position: opt<"top" | "bottom">("top"),
+      corners: opt(true),
+      layout: {
+        start: opt<Array<import("widget/bar/Bar").BarWidget>>([
+          "launcher",
+          "workspaces",
+          "taskbar",
+          "expander",
+          "messages",
+        ]),
+        center: opt<Array<import("widget/bar/Bar").BarWidget>>(["date"]),
+        end: opt<Array<import("widget/bar/Bar").BarWidget>>([
+          "media",
+          "expander",
+          "systray",
+          "colorpicker",
+          "screenrecord",
+          "system",
+          "battery",
+          "powermenu",
+        ]),
+      },
+      launcher: {
+        icon: {
+          colored: opt(true),
+          icon: opt(icon(distro.logo, icons.ui.search)),
+        },
+        label: {
+          colored: opt(false),
+          label: opt(" Applications"),
+        },
+        action: opt(() => App.toggleWindow("launcher")),
+      },
+      date: {
+        format: opt("%H:%M - %A %e."),
+        action: opt(() => App.toggleWindow("datemenu")),
+      },
+      battery: {
+        bar: opt<"hidden" | "regular" | "whole">("regular"),
+        charging: opt("#00D787"),
+        percentage: opt(true),
+        blocks: opt(7),
+        width: opt(50),
+        low: opt(30),
+      },
+      workspaces: {
+        workspaces: opt(7),
+      },
+      taskbar: {
+        iconSize: opt(0),
+        monochrome: opt(true),
+        exclusive: opt(false),
+      },
+      messages: {
+        action: opt(() => App.toggleWindow("datemenu")),
+      },
+      systray: {
+        ignore: opt(["KDE Connect Indicator", "spotify-client"]),
+      },
+      media: {
+        monochrome: opt(true),
+        preferred: opt("spotify"),
+        direction: opt<"left" | "right">("right"),
+        format: opt("{artists} - {title}"),
+        length: opt(40),
+      },
+      powermenu: {
+        monochrome: opt(false),
+        action: opt(() => App.toggleWindow("powermenu")),
+      },
+    },
+
     launcher: {
       icon: {
         colored: opt(true),
