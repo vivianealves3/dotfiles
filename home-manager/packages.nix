@@ -58,6 +58,7 @@
     lutris
     winetricks
     wine-staging
+    webcord-vencord
 
     # fun
     glow

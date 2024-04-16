@@ -50,9 +50,9 @@
     git
     wget
     rustdesk-flutter
-    webcord-vencord
     xdg-utils
     samba4
+    pass-wayland
   ];
 
   # services
