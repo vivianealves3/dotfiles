@@ -29,6 +29,10 @@
     "nxcg" = "sudo nix-collect-garbage";
     "nxst" = "sudo nixos-rebuild switch --flake github:PedroDiniz/dotfiles --impure";
     "nxbt" = "sudo nixos-rebuild boot --flake github:PedroDiniz/dotfiles --impure";
+    "nxst-desk" = "sudo nixos-rebuild switch --flake github:PedroDiniz/dotfiles/desktop --impure";
+    "nxbt-desk" = "sudo nixos-rebuild boot --flake github:PedroDiniz/dotfiles/desktop --impure";
+    "nxst-lptp" = "sudo nixos-rebuild switch --flake github:PedroDiniz/dotfiles/laptop --impure";
+    "nxbt-lptp" = "sudo nixos-rebuild boot --flake github:PedroDiniz/dotfiles/laptop --impure";
     "pjts" = "cd /home/kaldr/Projects";
     "forky" = "clear;neofetch";
   };
