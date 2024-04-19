@@ -31,10 +31,10 @@ in {
     xwayland.enable = true;
     plugins = with plugins; [hyprbars borderspp];
 
-    env = [
-      "WLR_DRM_NO_ATOMIC,1"
-    ];
     settings = {
+      env = [
+        "WLR_DRM_NO_ATOMIC,1"
+      ];
       exec-once = [
         "ags -b hypr"
         "hyprctl setcursor Qogir 24"
