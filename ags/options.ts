@@ -55,12 +55,11 @@ const options = mkOptions(OPTIONS, {
     radius: opt(11),
   },
 
-  blur: opt(0),
-  scheme: opt<"dark" | "light">("dark"),
-  widget: { opacity: opt(94) },
-  border: {
-    width: opt(1),
-    opacity: opt(96),
+  transition: opt(200),
+
+  font: {
+    size: opt(13),
+    name: opt("Ubuntu Nerd Font"),
   },
 
   bar: {
@@ -87,85 +86,10 @@ const options = mkOptions(OPTIONS, {
         "powermenu",
       ]),
     },
-
-    bar: {
-      flatButtons: opt(true),
-      position: opt<"top" | "bottom">("top"),
-      corners: opt(true),
-      layout: {
-        start: opt<Array<import("widget/bar/Bar").BarWidget>>([
-          "launcher",
-          "workspaces",
-          "taskbar",
-          "expander",
-          "messages",
-        ]),
-        center: opt<Array<import("widget/bar/Bar").BarWidget>>(["date"]),
-        end: opt<Array<import("widget/bar/Bar").BarWidget>>([
-          "media",
-          "expander",
-          "systray",
-          "colorpicker",
-          "screenrecord",
-          "system",
-          "battery",
-          "powermenu",
-        ]),
-      },
-      launcher: {
-        icon: {
-          colored: opt(true),
-          icon: opt(icon(distro.logo, icons.ui.search)),
-        },
-        label: {
-          colored: opt(false),
-          label: opt(" Applications"),
-        },
-        action: opt(() => App.toggleWindow("launcher")),
-      },
-      date: {
-        format: opt("%H:%M - %A %e."),
-        action: opt(() => App.toggleWindow("datemenu")),
-      },
-      battery: {
-        bar: opt<"hidden" | "regular" | "whole">("regular"),
-        charging: opt("#00D787"),
-        percentage: opt(true),
-        blocks: opt(7),
-        width: opt(50),
-        low: opt(30),
-      },
-      workspaces: {
-        workspaces: opt(7),
-      },
-      taskbar: {
-        iconSize: opt(0),
-        monochrome: opt(true),
-        exclusive: opt(false),
-      },
-      messages: {
-        action: opt(() => App.toggleWindow("datemenu")),
-      },
-      systray: {
-        ignore: opt(["KDE Connect Indicator", "spotify-client"]),
-      },
-      media: {
-        monochrome: opt(true),
-        preferred: opt("spotify"),
-        direction: opt<"left" | "right">("right"),
-        format: opt("{artists} - {title}"),
-        length: opt(40),
-      },
-      powermenu: {
-        monochrome: opt(false),
-        action: opt(() => App.toggleWindow("powermenu")),
-      },
-    },
-
     launcher: {
       icon: {
         colored: opt(true),
-        icon: opt(icon(distro, icons.ui.search)),
+        icon: opt(icon(distro.logo, icons.ui.search)),
       },
       label: {
         colored: opt(false),
@@ -212,87 +136,6 @@ const options = mkOptions(OPTIONS, {
     },
   },
 
-  transition: opt(200),
-
-  font: {
-    size: opt(13),
-    name: opt("Ubuntu Nerd Font"),
-  },
-
-  bar: {
-    flatButtons: opt(true),
-    position: opt<"top" | "bottom">("top"),
-    corners: opt(true),
-    layout: {
-      start: opt<BarWidget[]>([
-        "launcher",
-        "workspaces",
-        "taskbar",
-        "expander",
-        "messages",
-      ]),
-      center: opt<BarWidget[]>(["date"]),
-      end: opt<BarWidget[]>([
-        "media",
-        "expander",
-        "systray",
-        "colorpicker",
-        "screenrecord",
-        "system",
-        "battery",
-        "powermenu",
-      ]),
-    },
-    launcher: {
-      icon: {
-        colored: opt(true),
-        icon: opt(icon(distro.logo, icons.ui.search)),
-      },
-      label: {
-        colored: opt(false),
-        label: opt(" Applications"),
-      },
-      action: opt(() => App.toggleWindow("launcher")),
-    },
-    date: {
-      format: opt("%H:%M - %A %e."),
-      action: opt(() => App.toggleWindow("datemenu")),
-    },
-    battery: {
-      bar: opt<"hidden" | "regular" | "whole">("regular"),
-      charging: opt("#00D787"),
-      percentage: opt(true),
-      blocks: opt(7),
-      width: opt(50),
-      low: opt(30),
-    },
-    workspaces: {
-      workspaces: opt(7),
-    },
-    taskbar: {
-      iconSize: opt(0),
-      monochrome: opt(true),
-      exclusive: opt(false),
-    },
-    messages: {
-      action: opt(() => App.toggleWindow("datemenu")),
-    },
-    systray: {
-      ignore: opt(["KDE Connect Indicator", "Cider"]),
-    },
-    media: {
-      monochrome: opt(true),
-      preferred: opt("Cider"),
-      direction: opt<"left" | "right">("right"),
-      format: opt("{artists} - {title}"),
-      length: opt(40),
-    },
-    powermenu: {
-      monochrome: opt(false),
-      action: opt(() => App.toggleWindow("powermenu")),
-    },
-  },
-
   launcher: {
     width: opt(0),
     margin: opt(80),
@@ -300,21 +143,8 @@ const options = mkOptions(OPTIONS, {
       pkgs: opt("nixpkgs/nixos-unstable"),
       max: opt(8),
     },
-
-    datemenu: {
-      position: opt<"left" | "center" | "right">("center"),
-      weather: {
-        interval: opt(60_000),
-        unit: opt<"metric" | "imperial" | "standard">("metric"),
-        key: opt<string>(
-          JSON.parse(Utils.readFile(`${App.configDir}/.weather`) || "{}")
-            ?.key || ""
-        ),
-        cities: opt<Array<number>>(
-          JSON.parse(Utils.readFile(`${App.configDir}/.weather`) || "{}")
-            ?.cities || []
-        ),
-      },
+    sh: {
+      max: opt(16),
     },
     apps: {
       iconSize: opt(62),
@@ -363,6 +193,18 @@ const options = mkOptions(OPTIONS, {
 
   datemenu: {
     position: opt<"left" | "center" | "right">("center"),
+    weather: {
+      interval: opt(60_000),
+      unit: opt<"metric" | "imperial" | "standard">("metric"),
+      key: opt<string>(
+        JSON.parse(Utils.readFile(`${App.configDir}/.weather`) || "{}")?.key ||
+          ""
+      ),
+      cities: opt<Array<number>>(
+        JSON.parse(Utils.readFile(`${App.configDir}/.weather`) || "{}")
+          ?.cities || []
+      ),
+    },
   },
 
   osd: {
@@ -388,7 +230,7 @@ const options = mkOptions(OPTIONS, {
   },
 
   hyprland: {
-    gaps: opt(1.8),
+    gaps: opt(2.4),
     inactiveBorder: opt("333333ff"),
     gapsWhenOnly: opt(false),
   },
