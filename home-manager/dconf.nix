@@ -108,6 +108,7 @@ with lib.hm.gvariant; {
         "org.wezfurlong.wezterm.desktop"
         "org.gnome.Nautilus.desktop"
         "org.gnome.Calendar.desktop"
+        "rustdesk.desktop"
         "obsidian.desktop"
         "transmission-gtk.desktop"
         "caprine.desktop"

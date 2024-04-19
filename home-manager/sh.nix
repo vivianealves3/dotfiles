@@ -22,16 +22,19 @@
     "gc" = "git commit";
     "ga" = "git add";
     "gr" = "git reset --soft HEAD~1";
-
     "del" = "gio trash";
 
-    "cfg" = "code /home/viivs/dev/dotfiles";
+    "cfg" = "code /home/viivs/Projects/dotfiles";
 
     "nxcg" = "sudo nix-collect-garbage";
     "nxst" = "sudo nixos-rebuild switch --flake github:vivianealves3/dotfiles --impure";
     "nxbt" = "sudo nixos-rebuild boot --flake github:vivianealves3/dotfiles --impure";
-    "pjts" = "cd /home/viivs/dev";
-    "forky" = "clear; neofetch";
+    "nxst-desk" = "sudo nixos-rebuild switch --flake github:vivianealves3/dotfiles/desktop --impure";
+    "nxbt-desk" = "sudo nixos-rebuild boot --flake github:vivianealves3/dotfiles/desktop --impure";
+    "nxst-lptp" = "sudo nixos-rebuild switch --flake github:vivianealves3/dotfiles/laptop --impure";
+    "nxbt-lptp" = "sudo nixos-rebuild boot --flake github:vivianealves3/dotfiles/laptop --impure";
+    "pjts" = "cd /home/viivs/Projects";
+    "forky" = "clear;neofetch";
   };
 in {
   programs = {
@@ -110,13 +113,15 @@ in {
             }
           ];
         };
-        completion = name: ''
-          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/${name}/${name}-completions.nu
-        '';
-        completions = names:
-          builtins.foldl'
-          (prev: str: "${prev}\n${str}") ""
-          (map (name: completion name) names);
+        completions = let
+          completion = name: ''
+            source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/${name}/${name}-completions.nu
+          '';
+        in
+          names:
+            builtins.foldl'
+            (prev: str: "${prev}\n${str}") ""
+            (map (name: completion name) names);
       in ''
         $env.config = ${conf};
         ${completions ["cargo" "git" "nix" "npm"]}

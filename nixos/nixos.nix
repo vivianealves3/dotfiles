@@ -9,8 +9,8 @@
     ./locale.nix
     # ./gnome.nix
     ./hyprland.nix
-    # ./laptop.nix
-    ./desktop.nix
+    ./laptop.nix
+    # ./desktop.nix
     ./steam.nix
   ];
 
@@ -50,7 +50,9 @@
     git
     wget
     rustdesk-flutter
-    webcord-vencord
+    xdg-utils
+    samba4
+    pass-wayland
   ];
 
   # services

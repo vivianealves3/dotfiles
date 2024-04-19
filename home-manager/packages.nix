@@ -30,6 +30,12 @@
     bitwarden-desktop
     fnm
 
+    # langs
+    poetry
+    nodejs
+    yarn
+    go
+
     # tools
     bat
     eza
@@ -44,21 +50,21 @@
     mongodb-compass
     gh
     google-chrome
+    rclone
 
     # gaming
-    steam-run
-    # fhs envs
-    wine
-    winetricks
     r2modman
     mangohud
     goverlay
     bottles
     protonup-qt
     chiaki
-    lutris
     gamescope
     gamemode
+    lutris
+    winetricks
+    wine-staging
+    webcord-vencord
 
     # fun
     glow

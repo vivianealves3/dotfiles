@@ -29,18 +29,25 @@ in {
     package = hyprland;
     systemd.enable = true;
     xwayland.enable = true;
-    # plugins = with plugins; [ hyprbars borderspp ];
+    plugins = with plugins; [
+      hyprexpo
+      # hyprbars
+      # borderspp
+    ];
 
     settings = {
+      env = [
+        "WLR_DRM_NO_ATOMIC,1"
+      ];
       exec-once = [
         "ags -b hypr"
         "hyprctl setcursor Qogir 24"
       ];
 
       monitor = [
-        "DP-1, 1360x768, 0x0, 1"
-        "HDMI-A-1, 1920x1080, 1360x0, 1"
-        "DVI-D-1, 1600x900, 3280x0, 1"
+        "DP-1, 1366x768, 0x0, 1"
+        "HDMI-A-1, 1920x1080, 1366x0, 1"
+        "DVI-D-1, 1600x900, 3286x0, 1"
       ];
 
       general = {
@@ -64,6 +71,7 @@ in {
         };
         sensitivity = 0;
         float_switch_override_focus = 2;
+        numlock_by_default = true;
       };
 
       binds = {
@@ -73,7 +81,7 @@ in {
       dwindle = {
         pseudotile = "yes";
         preserve_split = "yes";
-        # no_gaps_when_only = "yes";
+        no_gaps_when_only = "yes";
       };
 
       gestures = {
@@ -99,6 +107,8 @@ in {
         (f "com.github.Aylur.ags")
         "workspace 7, title:Cider"
       ];
+
+      windowrulev2 = ["immediate, class:^(cs2)$"];
 
       bind = let
         binding = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";
@@ -132,6 +142,8 @@ in {
           "SUPER, G, fullscreen"
           "SUPER, O, fakefullscreen"
           "SUPER, P, togglesplit"
+
+          "SUPER, space, hyprexpo:expo, toggle"
 
           (mvfocus "k" "u")
           (mvfocus "j" "d")
@@ -209,6 +221,15 @@ in {
       };
 
       plugin = {
+        hyprexpo = {
+          columns = 3;
+          gap_size = 5;
+          bg_col = "rgb(232323)";
+          workspace_method = "center current";
+          enable_gesture = true;
+          gesture_distance = 300;
+          gesture_positive = false;
+        };
         hyprbars = {
           bar_color = "rgb(2a2a2a)";
           bar_height = 28;
