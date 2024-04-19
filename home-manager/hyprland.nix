@@ -29,8 +29,11 @@ in {
     package = hyprland;
     systemd.enable = true;
     xwayland.enable = true;
-    # plugins = with plugins; [ hyprbars borderspp ];
+    plugins = with plugins; [hyprbars borderspp];
 
+    env = [
+      "WLR_DRM_NO_ATOMIC,1"
+    ];
     settings = {
       exec-once = [
         "ags -b hypr"
@@ -46,6 +49,7 @@ in {
         layout = "dwindle";
         resize_on_border = true;
         no_cursor_warps = true;
+        allow_tearing = true;
       };
 
       misc = {
@@ -63,6 +67,7 @@ in {
         };
         sensitivity = 0;
         float_switch_override_focus = 2;
+        numlock_by_default = true;
       };
 
       binds = {
@@ -72,7 +77,7 @@ in {
       dwindle = {
         pseudotile = "yes";
         preserve_split = "yes";
-        # no_gaps_when_only = "yes";
+        no_gaps_when_only = "yes";
       };
 
       gestures = {
@@ -98,6 +103,8 @@ in {
         (f "com.github.Aylur.ags")
         "workspace 7, title:Cider"
       ];
+
+      windowrulev2 = ["immediate, class:^(cs2)$"];
 
       bind = let
         binding = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";
