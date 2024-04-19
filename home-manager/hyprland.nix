@@ -29,7 +29,11 @@ in {
     package = hyprland;
     systemd.enable = true;
     xwayland.enable = true;
-    plugins = with plugins; [hyprbars borderspp];
+    plugins = with plugins; [
+      hyprexpo
+      # hyprbars
+      # borderspp
+    ];
 
     settings = {
       env = [
@@ -49,7 +53,6 @@ in {
         layout = "dwindle";
         resize_on_border = true;
         no_cursor_warps = true;
-        allow_tearing = true;
       };
 
       misc = {
@@ -139,6 +142,8 @@ in {
           "SUPER, O, fakefullscreen"
           "SUPER, P, togglesplit"
 
+          "SUPER, space, hyprexpo:expo, toggle"
+
           (mvfocus "k" "u")
           (mvfocus "j" "d")
           (mvfocus "l" "r")
@@ -191,14 +196,14 @@ in {
         dim_inactive = false;
 
         blur = {
-          enabled = false;
+          enabled = true;
           size = 8;
           passes = 3;
           new_optimizations = "on";
           noise = 0.01;
           contrast = 0.9;
           brightness = 0.8;
-          popups = false;
+          popups = true;
         };
       };
 
@@ -215,6 +220,15 @@ in {
       };
 
       plugin = {
+        hyprexpo = {
+          columns = 3;
+          gap_size = 5;
+          bg_col = "rgb(232323)";
+          workspace_method = "center current";
+          enable_gesture = true;
+          gesture_distance = 300;
+          gesture_positive = false;
+        };
         hyprbars = {
           bar_color = "rgb(2a2a2a)";
           bar_height = 28;
