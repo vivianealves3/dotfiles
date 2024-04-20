@@ -62,7 +62,7 @@
       excludePackages = [pkgs.xterm];
     };
     printing.enable = true;
-    # flatpak.enable = true;
+    flatpak.enable = true;
   };
 
   # logind
