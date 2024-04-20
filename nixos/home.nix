@@ -52,7 +52,7 @@
     "file://${home}/Work"
     "file://${home}/Downloads"
     "file://${home}/Desktop"
-    "file://${home}/MyNotes"
+    "file://${home}/Vault"
     "file://${home}/Documents"
     "file://${home}/Pictures"
     "file://${home}/Videos"
