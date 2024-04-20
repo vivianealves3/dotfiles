@@ -9,8 +9,8 @@
     ./locale.nix
     # ./gnome.nix
     ./hyprland.nix
-    ./laptop.nix
-    # ./desktop.nix
+    # ./laptop.nix
+    ./desktop.nix
     ./steam.nix
   ];
 
