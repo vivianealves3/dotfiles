@@ -1,10 +1,10 @@
 {
     "name": "ags-dotfiles",
-    "author": "PedroDiniz - Forked from Aylur",
+    "author": "VivianeDiniz - Forked from Aylur",
     "kofi": "https://ko-fi.com/aylur",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/PedroDiniz/dotfiles.git"
+        "url": "git+https://github.com/vivianealves3/dotfiles.git"
     },
     "devDependencies": {
         "@girs/accountsservice-1.0": "^1.0.0-3.2.7",

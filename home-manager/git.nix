@@ -1,6 +1,6 @@
 let
-  email = "pedro_nork@hotmail.com";
-  name = "PedroDiniz";
+  email = "vivianealves3@hotmail.com";
+  name = "vivianealves3";
 in {
   programs.git = {
     enable = true;

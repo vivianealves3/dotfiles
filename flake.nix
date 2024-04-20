@@ -1,5 +1,6 @@
 {
-  description = "Configurations of Kaldr";
+  description = "Configurations of viivs
+";
 
   outputs = inputs @ {
     self,
@@ -20,7 +21,7 @@
     nixosConfigurations = {
       "nixos" = let
         hostname = "nixos";
-        username = "kaldr";
+        username = "viivs";
       in
         nixpkgs.lib.nixosSystem rec {
           system = "x86_64-linux";
@@ -63,7 +64,7 @@
 
     # nixos hm config
     homeConfigurations = let
-      username = "kaldr";
+      username = "viivs";
     in {
       "${username}" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
@@ -76,7 +77,7 @@
         };
         modules = [
           ./nixos/home.nix
-          ({ pkgs, ... }: {
+          ({pkgs, ...}: {
             nix.package = pkgs.nix;
             home = {
               username = username;
@@ -90,7 +91,7 @@
     # macos
     darwinConfigurations = {
       "macos" = let
-        username = "kaldr";
+        username = "viivs";
       in
         nix-darwin.lib.darwinSystem {
           modules = [
