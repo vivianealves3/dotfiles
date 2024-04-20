@@ -11,9 +11,9 @@
       rm -rf "$HOME/.config/ags"
       rm -rf "$HOME/.config/wezterm"
 
-      ln -s "$HOME/Projects/dotfiles/nvim" "$HOME/.config/nvim"
-      ln -s "$HOME/Projects/dotfiles/ags" "$HOME/.config/ags"
-      ln -s "$HOME/Projects/dotfiles/wezterm" "$HOME/.config/wezterm"
+      ln -s "$HOME/GitHub/dotfiles/nvim" "$HOME/.config/nvim"
+      ln -s "$HOME/GitHub/dotfiles/ags" "$HOME/.config/ags"
+      ln -s "$HOME/GitHub/dotfiles/wezterm" "$HOME/.config/wezterm"
     fi
   '';
   nx-switch = pkgs.writeShellScriptBin "nx-switch" ''

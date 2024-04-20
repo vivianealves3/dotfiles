@@ -30,7 +30,7 @@
     };
 
     open = true;
-    nvidiaSettings = false; # gui app
+    nvidiaSettings = true; # gui app
     package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
 }

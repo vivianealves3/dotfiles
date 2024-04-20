@@ -24,7 +24,7 @@
     "gr" = "git reset --soft HEAD~1";
     "del" = "gio trash";
 
-    "cfg" = "code /home/kaldr/Projects/dotfiles";
+    "cfg" = "code /home/kaldr/GitHub/dotfiles";
 
     "nxcg" = "sudo nix-collect-garbage";
     "nxst" = "sudo nixos-rebuild switch --flake github:PedroDiniz/dotfiles --impure";
@@ -33,7 +33,7 @@
     "nxbt-desk" = "sudo nixos-rebuild boot --flake github:PedroDiniz/dotfiles/desktop --impure";
     "nxst-lptp" = "sudo nixos-rebuild switch --flake github:PedroDiniz/dotfiles/laptop --impure";
     "nxbt-lptp" = "sudo nixos-rebuild boot --flake github:PedroDiniz/dotfiles/laptop --impure";
-    "pjts" = "cd /home/kaldr/Projects";
+    "pjts" = "cd /home/kaldr/GitHub";
     "forky" = "clear;neofetch";
   };
 in {
